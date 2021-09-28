@@ -97,10 +97,17 @@ profiles:
     - aduggal
     - sbadhe
     - rtripath
-    - supathak
   resources:
     mem_limit: 32Gi
     cpu_limit: 4
+
+- name: Special request for user shanand
+  users:
+    - supathak
+  resources:
+    mem_limit: 64Gi
+    cpu_limit: 4
+
 - name: Special request for user shanand to handle insights data
   users:
     - shanand
