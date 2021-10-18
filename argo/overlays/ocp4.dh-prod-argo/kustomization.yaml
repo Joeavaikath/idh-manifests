@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: dh-prod-argo
+
+commonLabels:
+  app.kubernetes.io/name: data-hub
+  app.kubernetes.io/component: argo
+  app.kubernetes.io/managed-by: aicoe-data-hub-argocd
+
+resources:
+  - ../../base
+  - ./membership.yaml
+  - ./roles/argo-role_patch.yaml
+  - ./roles/argo-server-role_patch.yaml
+  - ./roles/argo-user_patch.yaml
+
+patchesStrategicMerge:
+  - deployments/argo-server_patch.yaml
+  - deployments/workflow-controller_patch.yaml

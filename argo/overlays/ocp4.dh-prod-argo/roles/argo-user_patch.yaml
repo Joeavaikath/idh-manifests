@@ -1,0 +1,29 @@
+---
+apiVersion: authorization.openshift.io/v1
+kind: Role
+metadata:
+  name: argo-user
+  labels:
+    app.kubernetes.io/component: argo
+    app.kubernetes.io/instance: argo.ocp4.dh-prod-argo
+    app.kubernetes.io/managed-by: aicoe-data-hub-argocd
+    app.kubernetes.io/name: data-hub
+rules:
+- apiGroups:
+  - argoproj.io
+  resources:
+  - cronworkflows
+  - cronworkflows/finalizers
+  - workflows
+  - workflows/finalizers
+  - workfloweventbindings
+  - workflowtemplates
+  - workflowtemplates/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
