@@ -11,10 +11,10 @@ commonLabels:
 resources:
   - ../../base
   - ./membership.yaml
-  - ./roles/argo-role_patch.yaml
-  - ./roles/argo-server-role_patch.yaml
   - ./roles/argo-user_patch.yaml
 
 patchesStrategicMerge:
   - deployments/argo-server_patch.yaml
   - deployments/workflow-controller_patch.yaml
+  - roles/argo-role_patch.yaml
+  - roles/argo-server-role_patch.yaml
