@@ -15,8 +15,8 @@ rules:
   - configmaps
   verbs:
   - get
-  - watch
   - list
+  - watch
 - apiGroups:
   - ""
   resources:
@@ -31,18 +31,18 @@ rules:
   - pods/exec
   - pods/log
   verbs:
+  - delete
   - get
   - list
   - watch
-  - delete
 - apiGroups:
   - ""
   resources:
   - events
   verbs:
-  - watch
   - create
   - patch
+  - watch
 - apiGroups:
   - ""
   resources:
@@ -53,16 +53,16 @@ rules:
 - apiGroups:
   - argoproj.io
   resources:
-  - workflows
-  - workfloweventbindings
-  - workflowtemplates
   - cronworkflows
   - cronworkflows/finalizers
+  - workfloweventbindings
+  - workflows
+  - workflowtemplates
   verbs:
   - create
+  - delete
   - get
   - list
-  - watch
-  - update
   - patch
-  - delete
+  - update
+  - watch

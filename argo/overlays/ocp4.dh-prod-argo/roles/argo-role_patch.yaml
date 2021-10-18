@@ -16,20 +16,20 @@ rules:
   - pods/exec
   verbs:
   - create
+  - delete
   - get
   - list
-  - watch
-  - update
   - patch
-  - delete
+  - update
+  - watch
 - apiGroups:
   - ""
   resources:
   - configmaps
   verbs:
   - get
-  - watch
   - list
+  - watch
 - apiGroups:
   - ""
   resources:
@@ -44,13 +44,13 @@ rules:
   - workflows
   - workflows/finalizers
   verbs:
+  - create
+  - delete
   - get
   - list
-  - watch
-  - update
   - patch
-  - delete
-  - create
+  - update
+  - watch
 - apiGroups:
   - argoproj.io
   resources:
@@ -79,12 +79,12 @@ rules:
   - cronworkflows
   - cronworkflows/finalizers
   verbs:
+  - delete
   - get
   - list
-  - watch
-  - update
   - patch
-  - delete
+  - update
+  - watch
 - apiGroups:
   - ""
   resources:
@@ -98,5 +98,5 @@ rules:
   - poddisruptionbudgets
   verbs:
   - create
-  - get
   - delete
+  - get
