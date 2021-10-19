@@ -14,9 +14,9 @@ rules:
   resources:
   - cronworkflows
   - cronworkflows/finalizers
+  - workfloweventbindings
   - workflows
   - workflows/finalizers
-  - workfloweventbindings
   - workflowtemplates
   - workflowtemplates/finalizers
   verbs:
