@@ -33,6 +33,13 @@ spec:
                       - {{ $.Values.kafka_affinity_match | quote }}
   {{- end}}
     replicas: {{ $.Values.kafka_replicas }}
+    resources:
+      requests:
+        memory: 30Gi
+        cpu: "1"
+      limits:
+        memory: 40Gi
+        cpu: "2"
     metrics:
       # Inspired by config from Kafka 2.0.0 example rules:
       # https://github.com/prometheus/jmx_exporter/blob/master/example_configs/kafka-2_0_0.yml
@@ -165,6 +172,13 @@ spec:
       deleteClaim: false
   zookeeper:
     replicas: {{ $.Values.zookeeper_replicas }}
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "1"
     storage:
       type: persistent-claim
       size: {{ $.Values.zookeeper_storage_size | quote }}
