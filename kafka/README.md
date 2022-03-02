@@ -50,14 +50,14 @@ configured to monitor multiple namespaces. See [here][2] for more information.
 To deploy Kafka and its supporting artifacts to dev, run the following command:
 
 ```bash
-helm secrets install --generate-name -f secrets.enc.yaml -f helm_vars/dev/values.yaml -f helm_vars/dev/secrets.yaml .
+helm secrets install --generate-name -f secrets.yaml -f helm_vars/dev/values.yaml -f helm_vars/dev/secrets.yaml .
 ```
 
 Once deploy to upgrade the current deployment run the commands:
 
 ```bash
 helm list
-helm secrets upgrade -f secrets.enc.yaml -f helm_vars/prod/values.yaml -f helm_vars/prod/secrets.yaml <chart_name_from_previous_command> .
+helm secrets upgrade -f secrets.yaml -f helm_vars/prod/values.yaml -f helm_vars/prod/secrets.yaml <chart_name_from_previous_command> .
 ```
 
 ### Steps to deploy in stage
@@ -65,14 +65,14 @@ helm secrets upgrade -f secrets.enc.yaml -f helm_vars/prod/values.yaml -f helm_v
 To deploy Kafka and its supporting artifacts to stage, run the following command:
 
 ```bash
- helm secrets install --generate-name -f secrets.enc.yaml -f helm_vars/stage/values.yaml -f helm_vars/stage/secrets.yaml .
+ helm secrets install --generate-name -f secrets.yaml -f helm_vars/stage/values.yaml -f helm_vars/stage/secrets.yaml .
 ```
 
 Once deploy to upgrade the current deployment run the commands:
 
 ```bash
 helm list
-helm secrets upgrade -f secrets.enc.yaml -f helm_vars/stage/values.yaml -f helm_vars/stage/secrets.yaml <chart_name_from_previous_command> .
+helm secrets upgrade -f secrets.yaml -f helm_vars/stage/values.yaml -f helm_vars/stage/secrets.yaml <chart_name_from_previous_command> .
 ```
 
 ### Steps to deploy in prod
@@ -81,14 +81,14 @@ To deploy Kafka and its supporting artifacts to prod, run the following commands
 __Note: In order to deploy Kafka you must have the "strimziadmin" role associated with your account in OpenShift in the Kafka namespace. If you do not have the role, open a ticket similar to [PNT0776863](https://redhat.service-now.com/surl.do?n=PNT0776863) and add the team lead as a watcher.__
 
 ```bash
-helm secrets install --generate-name -f secrets.enc.yaml -f helm_vars/prod/values.yaml -f helm_vars/prod/secrets.yaml .
+helm secrets install --generate-name -f secrets.yaml -f helm_vars/prod/values.yaml -f helm_vars/prod/secrets.yaml .
 ```
 
 Once deploy to upgrade the current deployment run the commands:
 
 ```bash
 helm list
-helm secrets upgrade -f secrets.enc.yaml -f helm_vars/prod/values.yaml -f helm_vars/prod/secrets.yaml <chart_name_from_previous_command> .
+helm secrets upgrade -f secrets.yaml -f helm_vars/prod/values.yaml -f helm_vars/prod/secrets.yaml <chart_name_from_previous_command> .
 ```
 
 ## Further Documentation
