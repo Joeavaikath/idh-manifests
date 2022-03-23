@@ -40,30 +40,30 @@ spec:
     spark_home: "/opt/app-root/lib/python3.6/site-packages/pyspark/"
     spark_pythonpath: "$PYTHONPATH:/opt/app-root/lib/python3.6/site-packages/:/opt/app-root/lib/python3.6/site-packages/pyspark/python/:/opt/app-root/lib/python3.6/site-packages/pyspark/python/lib/py4j-0.8.2.1-src.zip"
   spark:
-      # Spark image to use in the cluster
-      image: "quay.io/opendatahub/spark-cluster-image:spark22python36"
-      worker:
-        # Number of spark worker nodes
-        instances: 2
-        # Amount of cpu & memory resources to allocate to the each worker node in the cluster.
-        resources:
-          limits:
-            memory: 4Gi
-            cpu: 3
-          requests:
-            memory: 1Gi
-            cpu: 500m
-      master:
-        # Number of spark master nodes
-        instances: 1
-        # Amount of cpu & memory resources to allocate to the each node in the cluster.
-        resources:
-          limits:
-            memory: 4Gi
-            cpu: 1
-          requests:
-            memory: 1Gi
-            cpu: 500m
+    # Spark image to use in the cluster
+    image: "quay.io/opendatahub/spark-cluster-image:spark22python36"
+    worker:
+      # Number of spark worker nodes
+      instances: 2
+      # Amount of cpu & memory resources to allocate to the each worker node in the cluster.
+      resources:
+        limits:
+          memory: 4Gi
+          cpu: 3
+        requests:
+          memory: 1Gi
+          cpu: 500m
+    master:
+      # Number of spark master nodes
+      instances: 1
+      # Amount of cpu & memory resources to allocate to the each node in the cluster.
+      resources:
+        limits:
+          memory: 4Gi
+          cpu: 1
+        requests:
+          memory: 1Gi
+          cpu: 500m
   spark-operator:
     odh_deploy: True
     operator_image: radanalyticsio/spark-operator:latest

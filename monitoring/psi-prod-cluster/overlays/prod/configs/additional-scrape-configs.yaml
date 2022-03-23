@@ -8,4 +8,3 @@
   static_configs:
     - targets:
       - 'prometheus-dh-prod-monitoring.cloud.datahub.psi.redhat.com'
-
