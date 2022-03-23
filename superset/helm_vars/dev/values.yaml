@@ -1,3 +1,0 @@
-namespace: dh-dev-superset
-AUTH_USER_REG_ROLE : Alpha
-STORAGE_CLASS_NAME: 'standard'
